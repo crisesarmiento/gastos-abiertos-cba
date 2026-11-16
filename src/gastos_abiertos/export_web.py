@@ -16,8 +16,11 @@ def export(db="data/processed/gastos.duckdb", out="web/data"):
     cols = ["tipo", "ejercicio", "fecha_corte", "jur_codigo", "jur_nombre", "unidad", "programa", "partida_codigo",
             "partida_nombre", "presupuesto_vigente", "compromiso", "devengado", "pagado"]
     def cell(v):
-        return float(v) if hasattr(v, "as_tuple") else (v.isoformat() if hasattr(v, "isoformat") else v)
-    data = {"columnas": cols, "filas": [[cell(v) for v in r] for r in rows]}
+        # Decimal -> centavos enteros (sin floats); fechas ISO
+        if hasattr(v, "as_tuple"):
+            return int(v.scaleb(2).to_integral_value())
+        return v.isoformat() if hasattr(v, "isoformat") else v
+    data = {"unidad_monto": "centavos", "columnas": cols, "filas": [[cell(v) for v in r] for r in rows]}
     cortes = {f"{r[0]}-{r[1]}": r[2].isoformat() for r in rows}
     meta = {
         "cortes": cortes,
@@ -27,7 +30,7 @@ def export(db="data/processed/gastos.duckdb", out="web/data"):
             "Datos agregados de ejecución presupuestaria (ZIP oficiales). No incluyen CUIT, comprobante ni proveedor.",
             "Cada ejercicio muestra su último corte acumulado; 2026 es parcial.",
             "Excluye partidas 20 (erogaciones figurativas) y, en Administración Central, 21 (fondos de terceros).",
-            "Montos en pesos corrientes nominales, sin ajuste por inflación.",
+            "Montos en pesos corrientes nominales, sin ajuste por inflación. En gastos.json los montos son centavos enteros.",
             "La Administración Central (AC) y los entes descentralizados (EMAEE) se muestran por separado."],
     }
     (out / "gastos.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))

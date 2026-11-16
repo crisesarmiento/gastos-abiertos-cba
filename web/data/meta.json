@@ -13,7 +13,7 @@
   "Datos agregados de ejecución presupuestaria (ZIP oficiales). No incluyen CUIT, comprobante ni proveedor.",
   "Cada ejercicio muestra su último corte acumulado; 2026 es parcial.",
   "Excluye partidas 20 (erogaciones figurativas) y, en Administración Central, 21 (fondos de terceros).",
-  "Montos en pesos corrientes nominales, sin ajuste por inflación.",
+  "Montos en pesos corrientes nominales, sin ajuste por inflación. En gastos.json los montos son centavos enteros.",
   "La Administración Central (AC) y los entes descentralizados (EMAEE) se muestran por separado."
  ]
 }
