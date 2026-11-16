@@ -19,3 +19,6 @@ Se muestra CUIT, no razón social (el portal desde jul-2026 no la entrega; no se
 
 ## Atribución
 Datos: Portal de Transparencia de la Provincia de Córdoba (transparencia.cba.gov.ar).
+
+## Web (Etapa 3)
+`PYTHONPATH=src python -m gastos_abiertos.export_web` genera `web/data/*.json` desde DuckDB; luego `python3 -m http.server -d web 8000` y abrir http://localhost:8000/. HTML/CSS/JS plano, sin CDN. v1 usa solo ZIP oficiales: sin CUIT, proveedor ni comprobantes (decisión del 2026-11-16: sin API).

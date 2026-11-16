@@ -1,0 +1,19 @@
+{
+ "cortes": {
+  "AC-2024": "2024-12-31",
+  "AC-2025": "2025-12-31",
+  "AC-2026": "2026-06-30",
+  "EMAEE-2024": "2024-12-31",
+  "EMAEE-2025": "2025-12-31",
+  "EMAEE-2026": "2026-06-30"
+ },
+ "fuente": "https://transparencia.cba.gov.ar/ejecuciones-presupuestarias/",
+ "atribucion": "Portal de Transparencia de la Provincia de Córdoba",
+ "notas": [
+  "Datos agregados de ejecución presupuestaria (ZIP oficiales). No incluyen CUIT, comprobante ni proveedor.",
+  "Cada ejercicio muestra su último corte acumulado; 2026 es parcial.",
+  "Excluye partidas 20 (erogaciones figurativas) y, en Administración Central, 21 (fondos de terceros).",
+  "Montos en pesos corrientes nominales, sin ajuste por inflación.",
+  "La Administración Central (AC) y los entes descentralizados (EMAEE) se muestran por separado."
+ ]
+}

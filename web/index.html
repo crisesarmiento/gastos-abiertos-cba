@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gastos abiertos de Córdoba · Ejecución presupuestaria</title>
+  <meta name="description" content="Explorá la ejecución presupuestaria de la Provincia de Córdoba por ejercicio, jurisdicción, unidad, programa y partida. Datos oficiales del Portal de Transparencia.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <p class="kicker">Provincia de Córdoba · Ejecución presupuestaria</p>
+      <h1>Gastos abiertos <span>de Córdoba</span></h1>
+      <p class="lede">Cuánto se presupuestó, se comprometió, se devengó y se pagó, por jurisdicción, unidad, programa y partida. Una web estática, sin servidor, con los datos oficiales a la vista.</p>
+
+      <dl class="status" aria-label="Origen y vigencia de los datos">
+        <div>
+          <dt>Fecha de corte</dt>
+          <dd id="st-corte">—</dd>
+        </div>
+        <div>
+          <dt>Fuente</dt>
+          <dd><a id="st-fuente" href="#" rel="noopener noreferrer" target="_blank">—</a></dd>
+        </div>
+        <div>
+          <dt>Atribución</dt>
+          <dd id="st-atrib">—</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="wrap notices" role="region" aria-label="Avisos importantes">
+    <p class="notice notice--partial" id="aviso-parcial" hidden></p>
+    <p class="notice notice--scope">
+      <strong>Qué no incluye esta versión.</strong>
+      Usa ejecución presupuestaria agregada; no incluye CUIT, proveedor ni comprobantes. El detalle por proveedor requeriría microdato del portal.
+    </p>
+  </div>
+
+  <main id="contenido" class="wrap layout" tabindex="-1">
+
+    <aside class="filters" aria-label="Filtros">
+      <details id="filters-box" open>
+        <summary><span>Filtros</span><button type="button" class="link-btn" id="btn-reset">Limpiar</button></summary>
+
+        <fieldset class="seg" id="f-tipo">
+          <legend>Tipo de organismo</legend>
+          <label><input type="radio" name="tipo" value="AC" checked><span>AC</span></label>
+          <label><input type="radio" name="tipo" value="EMAEE"><span>EMAEE</span></label>
+          <p class="hint">AC: Administración Central. EMAEE: entes descentralizados. Se muestran por separado, nunca sumados.</p>
+        </fieldset>
+
+        <div class="field">
+          <label for="f-ejercicio">Ejercicio</label>
+          <select id="f-ejercicio"></select>
+        </div>
+        <div class="field">
+          <label for="f-jur">Jurisdicción</label>
+          <select id="f-jur"></select>
+        </div>
+        <div class="field">
+          <label for="f-unidad">Unidad</label>
+          <select id="f-unidad"></select>
+        </div>
+        <div class="field">
+          <label for="f-programa">Programa</label>
+          <select id="f-programa"></select>
+        </div>
+        <div class="field">
+          <label for="f-partida">Partida</label>
+          <select id="f-partida"></select>
+        </div>
+        <p class="hint">Los filtros van en cascada: cada lista muestra solo lo que existe según lo elegido arriba.</p>
+      </details>
+    </aside>
+
+    <section class="content" aria-label="Resultados">
+      <p class="selection" id="selection" aria-live="polite"></p>
+
+      <div class="kpis" id="kpis" aria-label="Totales del filtro actual"></div>
+
+      <div class="toolbar">
+        <fieldset class="seg seg--metric" id="f-metric">
+          <legend>Métrica</legend>
+          <label><input type="radio" name="metric" value="devengado" checked><span>Devengado</span></label>
+          <label><input type="radio" name="metric" value="pagado"><span>Pagado</span></label>
+          <label><input type="radio" name="metric" value="vigente"><span>Presupuesto vigente</span></label>
+          <label><input type="radio" name="metric" value="compromiso"><span>Compromiso</span></label>
+        </fieldset>
+        <p class="hint" id="metric-hint"></p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Vistas">
+        <button role="tab" id="tab-anual" aria-controls="panel-anual" aria-selected="true" data-tab="anual">Total anual</button>
+        <button role="tab" id="tab-top" aria-controls="panel-top" aria-selected="false" tabindex="-1" data-tab="top">Top del período</button>
+        <button role="tab" id="tab-detalle" aria-controls="panel-detalle" aria-selected="false" tabindex="-1" data-tab="detalle">Detalle</button>
+        <button role="tab" id="tab-prov" aria-controls="panel-prov" aria-selected="false" tabindex="-1" data-tab="prov" class="tab--off">Por proveedor / CUIT <em>no disponible</em></button>
+      </div>
+
+      <!-- Total anual -->
+      <section role="tabpanel" id="panel-anual" aria-labelledby="tab-anual" class="panel">
+        <div class="panel-head">
+          <h2>Total anual por ejercicio</h2>
+          <label class="check"><input type="checkbox" id="f-compare"> <span>Comparar AC y EMAEE (sin sumarlos)</span></label>
+        </div>
+        <p class="hint" id="compare-hint"></p>
+        <div id="chart" class="chart" role="img" aria-labelledby="chart-alt"></div>
+        <p id="chart-alt" class="sr-only"></p>
+        <div class="legend" id="legend"></div>
+        <details class="datatable">
+          <summary>Ver estos datos en tabla</summary>
+          <div class="table-scroll"><table id="annual-table"></table></div>
+        </details>
+        <p class="foot">
+          Pesos corrientes nominales, sin ajuste por inflación (el ajuste queda para una versión futura): no conviene comparar años en términos reales.
+          1 billón = un millón de millones. Los filtros de jurisdicción, unidad, programa y partida se aplican a todos los años; si una unidad cambió de nombre entre ejercicios, puede aparecer en cero.
+        </p>
+      </section>
+
+      <!-- Top -->
+      <section role="tabpanel" id="panel-top" aria-labelledby="tab-top" class="panel" hidden>
+        <div class="panel-head">
+          <h2>Top del período</h2>
+          <div class="inline-fields">
+            <div class="field field--inline">
+              <label for="top-dim">Agrupar por</label>
+              <select id="top-dim">
+                <option value="jur">Jurisdicción</option>
+                <option value="unidad">Unidad</option>
+                <option value="programa">Programa</option>
+                <option value="partida">Partida</option>
+              </select>
+            </div>
+            <div class="field field--inline">
+              <label for="top-n">Mostrar</label>
+              <select id="top-n">
+                <option value="10">Top 10</option>
+                <option value="20">Top 20</option>
+                <option value="50">Top 50</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="top-body"></div>
+      </section>
+
+      <!-- Detalle -->
+      <section role="tabpanel" id="panel-detalle" aria-labelledby="tab-detalle" class="panel" hidden>
+        <div class="panel-head">
+          <h2>Detalle de filas</h2>
+          <div class="inline-fields">
+            <div class="field field--inline">
+              <label for="page-size">Filas por página</label>
+              <select id="page-size">
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tabla de detalle, desplazable" id="detail-scroll">
+          <table id="detail-table"></table>
+        </div>
+        <nav class="pager" aria-label="Paginación">
+          <button type="button" id="pg-prev">← Anterior</button>
+          <span id="pg-info" aria-live="polite"></span>
+          <button type="button" id="pg-next">Siguiente →</button>
+        </nav>
+      </section>
+
+      <!-- Proveedor -->
+      <section role="tabpanel" id="panel-prov" aria-labelledby="tab-prov" class="panel" hidden>
+        <h2>Por proveedor / CUIT <span class="badge">No disponible en esta versión</span></h2>
+        <p class="big-note">
+          Esta versión usa ejecución presupuestaria agregada; no incluye CUIT, proveedor ni comprobantes.
+          El detalle por proveedor requeriría microdato del portal.
+        </p>
+        <p>Por eso no hay filtro por CUIT ni vista por proveedor: mostrar algo ahí sería inventar datos. Lo que sí podés hacer es explorar por jurisdicción, unidad, programa y partida.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <h2>Notas sobre los datos</h2>
+      <ul id="notas"></ul>
+      <p class="small">Fuente: <a id="ft-fuente" href="#" rel="noopener noreferrer" target="_blank">—</a> · <span id="ft-atrib"></span>. Esta página no es un sitio oficial.</p>
+    </div>
+  </footer>
+
+  <noscript><p class="wrap">Esta página necesita JavaScript para mostrar los datos.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
