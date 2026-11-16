@@ -1,0 +1,562 @@
+[
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos Administración Central - Acumulado Diciembre 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "10746541711000",
+  "base": "10746541711000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos Administración Central - Acumulado Diciembre 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "10069005555249.99171823325",
+  "base": "10069005555250.05",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos Administración Central - Acumulado Diciembre 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "10069005555249.99171823325",
+  "base": "10069005555250.05",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos Administración Central - Acumulado Diciembre 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "9326777024055.18451031609",
+  "base": "9326777024055.20",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos EMAEE - Acumulado Diciembre 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "7516402906587.819992384",
+  "base": "7516402906587.82",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos EMAEE - Acumulado Diciembre 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos EMAEE - Acumulado Diciembre 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "6798196873352.904042640",
+  "base": "6798196873352.91",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Cuenta-de-Inversion-2025::Gastos EMAEE - Acumulado Diciembre 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "4430024356961.886471543",
+  "base": "4430024356961.90",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos Administración Central - Acumulado Diciembre 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "7099629334000",
+  "base": "7099629334000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos Administración Central - Acumulado Diciembre 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "6611032973965.64227010523",
+  "base": "6611032973965.72",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos Administración Central - Acumulado Diciembre 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "6611032973965.64227010523",
+  "base": "6611032973965.72",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos Administración Central - Acumulado Diciembre 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "5844240005828.33402891315",
+  "base": "5844240005828.39",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos EMAEE - Acumulado Diciembre 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "4585397823220.0206997607",
+  "base": "4585397823220.03",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos EMAEE - Acumulado Diciembre 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos EMAEE - Acumulado Diciembre 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "3931682196956.92056315555",
+  "base": "3931682196956.94",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Diciembre-2024::Gastos EMAEE - Acumulado Diciembre 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "2561508129968.21229527895",
+  "base": "2561508129968.23",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos Administración Central - Acumulado Junio 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "5299469228000",
+  "base": "5299469228000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos Administración Central - Acumulado Junio 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "2817909129972.13435479852",
+  "base": "2817909129972.14",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos Administración Central - Acumulado Junio 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "2518573249512.98527957512",
+  "base": "2518573249512.99",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos Administración Central - Acumulado Junio 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "2232481224078.13076936704",
+  "base": "2232481224078.16",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos EMAEE - Acumulado Junio 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "3352737713448.1701001",
+  "base": "3352737713448.17",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos EMAEE - Acumulado Junio 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos EMAEE - Acumulado Junio 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "1536474961901.7872377929",
+  "base": "1536474961901.80",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2024::Gastos EMAEE - Acumulado Junio 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "998627027496.8013929030",
+  "base": "998627027496.82",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos Administración Central - Acumulado Junio 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "10172616445000",
+  "base": "10172616445000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos Administración Central - Acumulado Junio 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "5134882107335.431338211234",
+  "base": "5134882107335.48",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos Administración Central - Acumulado Junio 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "4370900426307.711399708834",
+  "base": "4370900426307.78",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos Administración Central - Acumulado Junio 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "3800441579879.912403203304",
+  "base": "3800441579879.92",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos EMAEE - Acumulado Junio 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "7035064811738.00027044",
+  "base": "7035064811738.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos EMAEE - Acumulado Junio 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos EMAEE - Acumulado Junio 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "2696805213246.1574765009",
+  "base": "2696805213246.16",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2025::Gastos EMAEE - Acumulado Junio 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "1682961954581.8078403095",
+  "base": "1682961954581.80",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos Administración Central - Acumulado Junio 2026.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "12177690513000",
+  "base": "12177690513000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos Administración Central - Acumulado Junio 2026.xlsx",
+  "columna": "compromiso",
+  "fuente": "6602428556392.08932705927",
+  "base": "6602428556392.12",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos Administración Central - Acumulado Junio 2026.xlsx",
+  "columna": "devengado",
+  "fuente": "5606148794212.88031894257",
+  "base": "5606148794212.92",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos Administración Central - Acumulado Junio 2026.xlsx",
+  "columna": "pagado",
+  "fuente": "4884864272037.98755850550",
+  "base": "4884864272038.02",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos EMAEE - Acumulado Junio 2026.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "8836581597420",
+  "base": "8836581597420.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos EMAEE - Acumulado Junio 2026.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos EMAEE - Acumulado Junio 2026.xlsx",
+  "columna": "devengado",
+  "fuente": "4165861939896.6781091015",
+  "base": "4165861939896.67",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Junio-2026::Gastos EMAEE - Acumulado Junio 2026.xlsx",
+  "columna": "pagado",
+  "fuente": "2585141398729.3988270301",
+  "base": "2585141398729.40",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos Administración Central - Acumulado Marzo 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "4393896504000",
+  "base": "4393896504000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos Administración Central - Acumulado Marzo 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "1209231428857.07616535674",
+  "base": "1209231428857.11",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos Administración Central - Acumulado Marzo 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "971196397125.60268560974",
+  "base": "971196397125.65",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos Administración Central - Acumulado Marzo 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "712743528273.68928020626",
+  "base": "712743528273.72",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos EMAEE - Acumulado Marzo 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "2920612302000",
+  "base": "2920612302000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos EMAEE - Acumulado Marzo 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos EMAEE - Acumulado Marzo 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "594865638100.9750064640",
+  "base": "594865638101.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2024::Gastos EMAEE - Acumulado Marzo 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "339142367140.1414589800",
+  "base": "339142367140.14",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos Administración Central - Acumulado Marzo 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "9742406301000",
+  "base": "9742406301000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos Administración Central - Acumulado Marzo 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "2706646766758.00577957848",
+  "base": "2706646766758.06",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos Administración Central - Acumulado Marzo 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "1805206826242.12756946808",
+  "base": "1805206826242.18",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos Administración Central - Acumulado Marzo 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "1394500594938.365267194179",
+  "base": "1394500594938.33",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos EMAEE - Acumulado Marzo 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "6459835330823.00000044",
+  "base": "6459835330823.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos EMAEE - Acumulado Marzo 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos EMAEE - Acumulado Marzo 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "1110947020560.8018950664",
+  "base": "1110947020560.82",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2025-1::Gastos EMAEE - Acumulado Marzo 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "627585416009.8257929157",
+  "base": "627585416009.81",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos Administración Central - Acumulado Marzo 2026.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "12132807772000",
+  "base": "12132807772000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos Administración Central - Acumulado Marzo 2026.xlsx",
+  "columna": "compromiso",
+  "fuente": "3671044305466.10892741787",
+  "base": "3671044305466.13",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos Administración Central - Acumulado Marzo 2026.xlsx",
+  "columna": "devengado",
+  "fuente": "2577824318075.09991295737",
+  "base": "2577824318075.14",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos Administración Central - Acumulado Marzo 2026.xlsx",
+  "columna": "pagado",
+  "fuente": "1846793228960.81115443995",
+  "base": "1846793228960.77",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos EMAEE - Acumulado Marzo 2026.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "8808205614738",
+  "base": "8808205614738.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos EMAEE - Acumulado Marzo 2026.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos EMAEE - Acumulado Marzo 2026.xlsx",
+  "columna": "devengado",
+  "fuente": "1670983197813.81848128724",
+  "base": "1670983197813.85",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Marzo-2026::Gastos EMAEE - Acumulado Marzo 2026.xlsx",
+  "columna": "pagado",
+  "fuente": "944212025532.29438537724",
+  "base": "944212025532.32",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos Administración Central - Acumulado Septiembre 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "6082583380000",
+  "base": "6082583380000.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos Administración Central - Acumulado Septiembre 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "4392594685552.29295551166",
+  "base": "4392594685552.34",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos Administración Central - Acumulado Septiembre 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "4079538775485.10585328746",
+  "base": "4079538775485.24",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos Administración Central - Acumulado Septiembre 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "3725691778780.321753250994",
+  "base": "3725691778780.30",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos EMAEE - Acumulado Septiembre 2024.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "3436424128393.837253597",
+  "base": "3436424128393.83",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos EMAEE - Acumulado Septiembre 2024.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos EMAEE - Acumulado Septiembre 2024.xlsx",
+  "columna": "devengado",
+  "fuente": "2490678015868.7818726229",
+  "base": "2490678015868.80",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2024::Gastos EMAEE - Acumulado Septiembre 2024.xlsx",
+  "columna": "pagado",
+  "fuente": "1599374850294.8158055662",
+  "base": "1599374850294.83",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos Administración Central - Acumulado Septiembre 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "10100266106400.00000404",
+  "base": "10100266106400.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos Administración Central - Acumulado Septiembre 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "7346023040103.087219948366",
+  "base": "7346023040103.13",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos Administración Central - Acumulado Septiembre 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "6704118586656.293100036076",
+  "base": "6704118586656.38",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos Administración Central - Acumulado Septiembre 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "6129403784898.011624876406",
+  "base": "6129403784897.98",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos EMAEE - Acumulado Septiembre 2025.xlsx",
+  "columna": "presupuesto_vigente",
+  "fuente": "7081691032005.820270444",
+  "base": "7081691032005.82",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos EMAEE - Acumulado Septiembre 2025.xlsx",
+  "columna": "compromiso",
+  "fuente": "0",
+  "base": "0.00",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos EMAEE - Acumulado Septiembre 2025.xlsx",
+  "columna": "devengado",
+  "fuente": "4231399610088.763761392",
+  "base": "4231399610088.77",
+  "ok": true
+ },
+ {
+  "corrida": "Datos-Abiertos-Ejecucion-Presupuestaria-Septiembre-2025::Gastos EMAEE - Acumulado Septiembre 2025.xlsx",
+  "columna": "pagado",
+  "fuente": "2686696492432.154510648",
+  "base": "2686696492432.18",
+  "ok": true
+ }
+]

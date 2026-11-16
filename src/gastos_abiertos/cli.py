@@ -12,6 +12,19 @@ def main(argv=None):
     c.add_argument("--jurisdiccion"); c.add_argument("--limit", type=int)
     c.add_argument("--dry-run", action="store_true")
     args = p.parse_args(argv)
+    if args.cmd == "inventory":
+        from .inventory import inventory
+        inv = inventory()
+        print(f"zips locales: {len(inv['local'])}  en catalogo guardado: {len(inv['remote'])}  faltan: {len(inv['faltan_local'])}")
+        for n in inv["local"]: print(" ", n)
+        return 0
+    if args.cmd == "ingest-official":
+        from .ingest import run
+        db, res, ng, nr = run()
+        bad = [r for r in res if not r["ok"]]
+        print(f"gastos={ng} recursos={nr} db={db} checks={len(res)} fallidos={len(bad)}")
+        for b in bad: print("DESVIO", b)
+        return 1 if bad else 0
     print(f"{args.cmd}: no implementado todavía", file=sys.stderr)
     return 2
 
