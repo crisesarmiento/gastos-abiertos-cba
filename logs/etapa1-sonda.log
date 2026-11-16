@@ -1,2 +1,0 @@
-2026-11-16 GET https://transparencia.cba.gov.ar/robots.txt -> 200 (UA gastos-abiertos-cba)
-2026-11-16 GET https://transparencia.cba.gov.ar/ejecuciones-presupuestarias/ (10 s después) -> 403 CloudFront "Request blocked" (919 bytes). PARADO según conducta. No se reintentó ni se cambió el UA.

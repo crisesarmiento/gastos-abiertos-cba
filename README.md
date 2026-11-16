@@ -44,3 +44,11 @@ Ver `docs/desvios.md`: 80 controles XLSX vs base sin desvíos; 96 de 16 202 pare
 - Web: sin probar con lector de pantalla ni en otros navegadores; contraste sin medir.
 - Esquema `docs/schema.sql` incluye tablas de microdato (`hecho_devengado*`) vacías, reservadas para una versión con API.
 - Reintento único del catálogo programado a las 16:30 (`scripts/retry_catalogo.sh`); resultado en `logs/etapa1-sonda.log`.
+
+## Datos y licencia
+- Los datos son **públicos y agregados** (ejecución presupuestaria por jurisdicción, unidad, programa y partida). No incluyen CUIT, proveedores ni comprobantes ni datos personales.
+- Fuente: Portal de Transparencia de la Provincia de Córdoba. ZIPs oficiales en https://transparencia.cba.gov.ar/ejecuciones-presupuestarias/ (los datos pertenecen a su fuente; este repo no es un sitio oficial).
+- Los ZIP originales no se incluyen en el repo (`data/raw/`); se bajan de la página anterior y se dejan en `data/raw/zips/`.
+- Regenerar la base: `ingest-official` (paso 3 de "Cómo correr") reconstruye `data/processed/` (Parquet/CSV; el archivo DuckDB no se versiona). Luego `export_web` regenera `web/data/`.
+- Ver la web: `python3 -m http.server -d web 8000` y abrir http://localhost:8000/.
+- Licencia del código: MIT (`LICENSE`). Los datos conservan los términos de la fuente.

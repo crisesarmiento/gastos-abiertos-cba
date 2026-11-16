@@ -1,8 +1,15 @@
 .slim/deepwork/
+logs/
+*.log
+.env
+.env.*
 data/raw/
 data/cache/
 data/*.duckdb
+data/processed/*.duckdb
 *.zip
 .venv/
 __pycache__/
+*.pyc
 .pytest_cache/
+.ruff_cache/
