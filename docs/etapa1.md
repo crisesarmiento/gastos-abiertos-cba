@@ -3,7 +3,7 @@
 ## Acceso
 - `robots.txt` → 200 (confirma Crawl-delay 10, Disallow `/wp-content/themes/` y `/wp-content/plugins/`).
 - `/ejecuciones-presupuestarias/` → **403 CloudFront** con el User-Agent `gastos-abiertos-cba`. Se paró (ver `logs/etapa1-sonda.log`).
-- Los ZIP los bajó el usuario a mano a `data/raw/zips/`. **Sonda a la API: NO realizada** (Disallow + 403 en el sitio). Reintento único del catálogo: pendiente, ~2 h después, mismo UA.
+- Los ZIP los bajó el usuario a mano a `data/raw/zips/`. **Sonda a la API: NO realizada** (Disallow + 403 en el sitio). Reintento único del catálogo (2026-11-16 16:59, mismo UA, sin mail; el script programado de las 16:30 no llegó a correr y se hizo a mano): **403 de nuevo**. Fin: v1 solo con ZIPs descargados a mano.
 - Un reintento ≠ evasión: no se cambia el UA.
 
 ## ZIPs ingeridos (11 archivos; 10 con XLSX)
