@@ -99,9 +99,10 @@ def write_db(gastos, recursos, metas, out_dir):
     con.execute("""CREATE TABLE hecho_recurso (tipo VARCHAR, ejercicio INTEGER, mes INTEGER, fecha_corte DATE,
         jurisdiccion VARCHAR, principal VARCHAR, parcial VARCHAR, sub_parcial VARCHAR,
         presupuesto_vigente DECIMAL(18,2), recaudacion DECIMAL(18,2), corrida_id VARCHAR)""")
-    con.executemany("INSERT INTO hecho_recurso VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-        [(r["tipo"], r["AÑO"], r["MES"], r["fecha_corte"], r.get("JURISDICCION"), r["PRINCIPAL"], r.get("PARCIAL"),
-          r.get("SUB PARCIAL"), r["PRESUPUESTO VIGENTE"], r["RECAUDACION"], r["corrida_id"]) for r in recursos])
+    if recursos:
+        con.executemany("INSERT INTO hecho_recurso VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+            [(r["tipo"], r["AÑO"], r["MES"], r["fecha_corte"], r.get("JURISDICCION"), r["PRINCIPAL"], r.get("PARCIAL"),
+              r.get("SUB PARCIAL"), r["PRESUPUESTO VIGENTE"], r["RECAUDACION"], r["corrida_id"]) for r in recursos])
     con.executemany("INSERT INTO meta_corrida VALUES (?,?,?,CURRENT_TIMESTAMP AT TIME ZONE 'UTC',?,?,?)",
                     [(m[0], m[1], m[2], m[4], m[5], m[6]) for m in metas])
     # vista: solo el último corte por (tipo, ejercicio) -> evita sumar acumulados dos veces

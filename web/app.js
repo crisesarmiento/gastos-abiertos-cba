@@ -24,23 +24,39 @@
   };
   var TIPOS = { AC: 'Administración Central (AC)', EMAEE: 'Entes descentralizados (EMAEE)' };
 
-  var money = function (v) { return v == null ? 's/d' : nfARS.format(v); };
+  // Los montos viven como BigInt en centavos. Solo se pasan a texto al mostrarlos.
+  // Pesos exactos: parte entera y centavos por separado, sin dividir como float.
+  function money(v) {
+    if (v == null) return 's/d';
+    var neg = v < 0n, a = neg ? -v : v;
+    var cents = a % 100n;
+    return (neg ? '-' : '') + '$ ' + nf0.format(a / 100n) + ',' + (cents < 10n ? '0' : '') + cents.toString();
+  }
+  // Resumen para títulos (billones/millones): acá sí alcanza un float, es solo para mostrar.
   function compact(v) {
     if (v == null) return 'n/d';
-    var a = Math.abs(v);
-    if (a >= 1e12) return '$ ' + nf2.format(v / 1e12) + ' billones';
-    if (a >= 1e6) return '$ ' + nf0.format(v / 1e6) + ' millones';
-    return nfARS.format(v);
+    var p = Number(v) / 100, a = Math.abs(p);
+    if (a >= 1e12) return '$ ' + nf2.format(p / 1e12) + ' billones';
+    if (a >= 1e6) return '$ ' + nf0.format(p / 1e6) + ' millones';
+    return money(v);
   }
+  // Convierte un monto del JSON (entero en centavos) a BigInt; falla si no es entero seguro.
+  function toCents(x) {
+    if (x == null) return null;
+    if (typeof x !== 'number' || !Number.isSafeInteger(x)) throw new Error('monto no entero en centavos: ' + x);
+    return BigInt(x);
+  }
+  function ratio(a, b) { return b ? Number(a) / Number(b) : null; }
+  function cmp(a, b) { return a > b ? 1 : (a < b ? -1 : 0); }
   function fechaLarga(iso) {
     var p = iso.split('-');
     return parseInt(p[2], 10) + ' de ' + MESES[parseInt(p[1], 10) - 1] + ' de ' + p[0];
   }
   function fechaCorta(iso) { var p = iso.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
 
-  // Suma que devuelve null si ninguna fila tiene dato (p. ej. compromiso en EMAEE).
+  // Suma en centavos enteros (BigInt); devuelve null si ninguna fila tiene dato (p. ej. compromiso en EMAEE).
   function sum(rows, f) {
-    var s = 0, any = false;
+    var s = 0n, any = false;
     for (var i = 0; i < rows.length; i++) {
       var x = rows[i][f];
       if (x != null) { s += x; any = true; }
@@ -168,7 +184,7 @@
         '<div class="kpi-val">' + esc(compact(v)) + '</div>' +
         '<div class="kpi-sub">' + esc(sub) + '</div></div>';
     }).join('');
-    var ej = tot.vigente ? tot.devengado / tot.vigente : null;
+    var ej = tot.vigente ? ratio(tot.devengado, tot.vigente) : null;
     html += '<div class="kpi" data-k="ejecucion"><div class="kpi-name">Ejecución (devengado / vigente)</div>' +
       '<div class="kpi-val">' + (ej == null ? 'n/d' : esc(nfPct.format(ej))) + '</div>' +
       '<div class="kpi-sub">' + rows.length + ' filas</div></div>';
@@ -207,14 +223,14 @@
         })
       };
     });
-    var max = 0;
+    var max = 0n;
     data.forEach(function (g) { g.vals.forEach(function (x) { if (x.v != null && x.v > max) max = x.v; }); });
 
     var chart = $('chart');
     chart.style.setProperty('--n', YEARS.length);
     chart.innerHTML = data.map(function (g) {
       return '<div class="grp">' + g.vals.map(function (x) {
-        var pct = max > 0 && x.v != null ? x.v / max * 86 : 0;
+        var pct = max > 0n && x.v != null ? Number(x.v) / Number(max) * 86 : 0; // float solo para el alto de la barra
         var cls = 'bar t-' + x.t + (x.partial ? ' is-partial' : '') + (g.y === state.ejercicio && x.t === state.tipo ? ' is-sel' : '');
         return '<div class="bar-wrap" title="' + esc(x.t + ' ' + g.y + ': ' + money(x.v)) + '">' +
           '<div class="bar-val">' + esc(compact(x.v)) + '</div>' +
@@ -252,7 +268,7 @@
     var body = data.map(function (g) {
       return '<tr><th scope="row">' + g.y + (g.vals[0].partial ? ' (parcial)' : '') + '</th>' + g.vals.map(function (x) {
         var vig = sum(x.rows, 'v'), dev = sum(x.rows, 'd');
-        var ej = vig ? dev / vig : null;
+        var ej = vig ? ratio(dev, vig) : null;
         return '<td class="num">' + esc(money(x.v)) + '</td><td class="num">' + (ej == null ? 'n/d' : esc(nfPct.format(ej))) + '</td>';
       }).join('') + '</tr>';
     }).join('');
@@ -275,18 +291,18 @@
     var m = new Map();
     rows.forEach(function (r) {
       var k = dim.key(r), e = m.get(k);
-      if (!e) { e = { name: dim.name(r), sub: dim.sub ? dim.sub(r) : '', v: 0, n: 0 }; m.set(k, e); }
-      e.v += r[f] || 0; e.n++;
+      if (!e) { e = { name: dim.name(r), sub: dim.sub ? dim.sub(r) : '', v: 0n, n: 0 }; m.set(k, e); }
+      e.v += r[f] || 0n; e.n++;
     });
-    var all = Array.from(m.values()).sort(function (a, b) { return b.v - a.v; });
+    var all = Array.from(m.values()).sort(function (a, b) { return cmp(b.v, a.v); });
     var top = all.slice(0, state.n);
-    var topSum = top.reduce(function (s, e) { return s + e.v; }, 0);
-    var max = top.length ? top[0].v : 0;
+    var topSum = top.reduce(function (s, e) { return s + e.v; }, 0n);
+    var max = top.length ? top[0].v : 0n;
     var body = top.map(function (e, i) {
-      var share = total ? e.v / total : 0;
+      var share = total ? Number(e.v) / Number(total) : 0; // float solo para mostrar el porcentaje
       return '<tr><td class="pos">' + (i + 1) + '</td>' +
         '<th scope="row" class="name">' + esc(e.name) + (e.sub ? '<small>' + esc(e.sub) + '</small>' : '') + '</th>' +
-        '<td class="barcell"><div class="meter t-' + state.tipo + '" aria-hidden="true"><i style="width:' + (max ? (e.v / max * 100).toFixed(1) : 0) + '%"></i></div></td>' +
+        '<td class="barcell"><div class="meter t-' + state.tipo + '" aria-hidden="true"><i style="width:' + (max ? (Number(e.v) / Number(max) * 100).toFixed(1) : 0) + '%"></i></div></td>' +
         '<td class="num">' + esc(money(e.v)) + '</td><td class="num">' + esc(nfPct.format(share)) + '</td></tr>';
     }).join('');
     host.innerHTML = '<div class="table-scroll"><table class="rank">' +
@@ -296,7 +312,7 @@
       '<tbody>' + body + '</tbody>' +
       '<tfoot><tr><th scope="row" colspan="3">Total del filtro (' + all.length + ' ' + esc(dim.label.toLowerCase()) + (all.length === 1 ? '' : 's') + ')</th><td class="num">' + esc(money(total)) + '</td><td class="num">100,0 %</td></tr></tfoot>' +
       '</table></div>' +
-      '<p class="rank-sum">El top ' + top.length + ' concentra ' + esc(nfPct.format(total ? topSum / total : 0)) + ' del total filtrado. El porcentaje es sobre el total del ejercicio, tipo y filtros elegidos.</p>';
+      '<p class="rank-sum">El top ' + top.length + ' concentra ' + esc(nfPct.format(total ? Number(topSum) / Number(total) : 0)) + ' del total filtrado. El porcentaje es sobre el total del ejercicio, tipo y filtros elegidos.</p>';
   }
 
   // --- Detalle ---
@@ -319,7 +335,7 @@
         if (x == null && y == null) return 0;
         if (x == null) return 1;
         if (y == null) return -1;
-        return (x - y) * dir;
+        return cmp(x, y) * dir;
       }
       return col.get(a).localeCompare(col.get(b), 'es', { numeric: true }) * dir;
     });
@@ -444,13 +460,14 @@
     fetch('data/gastos.json').then(function (r) { if (!r.ok) throw new Error('gastos.json: ' + r.status); return r.json(); }),
     fetch('data/meta.json').then(function (r) { if (!r.ok) throw new Error('meta.json: ' + r.status); return r.json(); })
   ]).then(function (res) {
+    if (res[0].unidad_monto !== 'centavos') throw new Error('los montos de gastos.json no están en centavos (unidad_monto=' + res[0].unidad_monto + ')');
     var cols = res[0].columnas, idx = {};
     cols.forEach(function (c, i) { idx[c] = i; });
     DATA = res[0].filas.map(function (f) {
       return {
         t: f[idx.tipo], y: f[idx.ejercicio], corte: f[idx.fecha_corte], jc: f[idx.jur_codigo], jn: f[idx.jur_nombre],
         u: f[idx.unidad], p: f[idx.programa], pc: f[idx.partida_codigo], pn: f[idx.partida_nombre],
-        v: f[idx.presupuesto_vigente], c: f[idx.compromiso], d: f[idx.devengado], g: f[idx.pagado]
+        v: toCents(f[idx.presupuesto_vigente]), c: toCents(f[idx.compromiso]), d: toCents(f[idx.devengado]), g: toCents(f[idx.pagado])
       };
     });
     META = res[1];
