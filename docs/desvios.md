@@ -8,7 +8,7 @@ No se hace validación microdato vs agregado: la v1 no usa la API (decisión del
 - Los acumulados no se suman entre cortes: la vista `v_agregado_ultimo_corte` y la web usan el último corte por (tipo, ejercicio).
 
 ## Desvío encontrado: acumulados que bajan entre cortes
-Un acumulado de devengado debería no disminuir entre cortes del mismo ejercicio. En 77 de ~16 600 pares (clave: tipo, jurisdicción, unidad, programa, partida, finalidad, función; cortes mar/jun/sep/dic) el valor baja. No se corrigió ni se oculta; se reporta:
+Un acumulado de devengado debería no disminuir entre cortes del mismo ejercicio. En 96 de 16 202 pares (clave: tipo, jurisdicción, unidad, programa, partida, finalidad, función; cortes mar/jun/sep/dic) el valor baja. No se corrigió ni se oculta; se reporta:
 | Tipo | Ejercicio | Pares con baja | Monto total de la baja |
 |---|---|---|---|
 | AC | 2024 | 32 | $ 7 546 598 883 |
