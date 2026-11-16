@@ -1,0 +1,10 @@
+[project]
+name = "gastos-abiertos-cba"
+version = "0.0.1"
+requires-python = ">=3.12"
+[project.scripts]
+gastos-abiertos = "gastos_abiertos.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]

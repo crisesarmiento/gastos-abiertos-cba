@@ -1,0 +1,8 @@
+.slim/deepwork/
+data/raw/
+data/cache/
+data/*.duckdb
+*.zip
+.venv/
+__pycache__/
+.pytest_cache/

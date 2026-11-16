@@ -1,0 +1,7 @@
+requests
+openpyxl
+duckdb
+pyarrow
+beautifulsoup4
+pytest
+responses
