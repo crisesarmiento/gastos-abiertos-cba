@@ -1,7 +1,7 @@
 # gastos-abiertos-cba
 Scraper respetuoso y visualización estática de los gastos públicos de la Provincia de Córdoba. Inspirado en https://bsaenz.shinyapps.io/pauta-cordoba/ (pauta publicitaria), pero para todos los gastos. Proyecto cívico local: **no se publica ni se despliega**.
 
-**Estado: Etapa 0 (diseño).** Sin datos todavía.
+**Estado: Etapa 1.** ZIPs oficiales ingeridos (2024–jun 2026) desde descarga manual; la API no se sondeó (ver `docs/etapa1.md`).
 
 ## Fuentes
 - A) ZIPs oficiales de ejecución presupuestaria: https://transparencia.cba.gov.ar/ejecuciones-presupuestarias/ (Administración Central y EMAEE; acumulados, sin objeto 3090000, CUIT, comprobante ni proveedor).
