@@ -1,7 +1,7 @@
 # gastos-abiertos-cba
-Scraper respetuoso y visualización estática de los gastos públicos de la Provincia de Córdoba. Inspirado en https://bsaenz.shinyapps.io/pauta-cordoba/ (pauta publicitaria), pero para todos los gastos. Proyecto cívico local: **no se publica ni se despliega**.
+Scraper respetuoso y visualización estática de los gastos públicos de la Provincia de Córdoba. Inspirado en https://bsaenz.shinyapps.io/pauta-cordoba/ (pauta publicitaria), pero para todos los gastos. Proyecto cívico no oficial; la web está publicada en GitHub Pages (ver "Web publicada").
 
-**Estado: v1 completa (Etapa 4), solo local, sin publicar.** ZIPs oficiales ingeridos (2024–jun 2026) desde descarga manual; la API no se usa (decisión del 2026-11-16).
+**Estado: v1 completa (Etapa 4), web publicada en GitHub Pages.** ZIPs oficiales ingeridos (2024–jun 2026) desde descarga manual; la API no se usa (decisión del 2026-11-16).
 
 ## Fuentes
 - A) ZIPs oficiales de ejecución presupuestaria: https://transparencia.cba.gov.ar/ejecuciones-presupuestarias/ (Administración Central y EMAEE; acumulados, sin objeto 3090000, CUIT, comprobante ni proveedor).
@@ -22,6 +22,13 @@ Datos: Portal de Transparencia de la Provincia de Córdoba (transparencia.cba.go
 
 ## Web (Etapa 3)
 `PYTHONPATH=src python -m gastos_abiertos.export_web` genera `web/data/*.json` desde DuckDB; luego `python3 -m http.server -d web 8000` y abrir http://localhost:8000/. HTML/CSS/JS plano, sin CDN. v1 usa solo ZIP oficiales: sin CUIT, proveedor ni comprobantes (decisión del 2026-11-16: sin API).
+
+## Web publicada
+URL: https://crisesarmiento.github.io/gastos-abiertos-cba/
+
+Se despliega sola con el workflow `.github/workflows/pages.yml` cada vez que se pushea a `main` un cambio en `web/` (o a mano con "Run workflow"). Sirve la carpeta `web/` tal cual; no hay build ni scripts externos.
+
+Para actualizar los datos: `ingest-official` → `export_web` → commit de `web/data/` en una PR; al mergearla se vuelve a desplegar.
 
 ## Cómo correr (completo)
 1. `uv venv .venv && uv pip install -r requirements.txt --python .venv/bin/python`
